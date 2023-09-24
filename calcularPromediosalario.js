@@ -38,25 +38,41 @@ function calculateAverage(promedio) {
 const salariosPromedio = [1000, 2000, 3000];
 console.log(calculateAverage(salariosPromedio));
 
-/*escribe una función que reciba por parametro un string con nombres.
-cada uno de estos tendra su nombre de pila y su apellido, los cuales estaran separados por comas (",").
-deberas retornar las  iniciales del nombre de pila y de los apellidos.
- * Complete la función 'obtenerIniciales' a continuación.
- *
- * Se espera que la función devuelva un STRING.
- * La función recibe un STRING como parámetro.
+/*var resultado = obtenerIniciales("John,Doe,Anna,Smith");
+console.log(resultado); // Output: "JDAS"
+
  */
 
 function obtenerIniciales(nombres) {
     // Tu código aquí
-    var nombres = nombres.split(",");
-    var iniciales = "";
-    for (var i = 0; i < nombres.length; i++) {
-        iniciales += nombres[i].charAt(0);
-    }
-    return iniciales;
-}
+    var nombresIndividuales = nombres.split(",");
 
+    // Crear un array para almacenar las iniciales
+    var iniciales = [];
+  
+    // Iterar sobre cada nombre individual
+    for (var i = 0; i < nombresIndividuales.length; i++) {
+      // Separar el nombre de pila y el apellido
+      var nombreCompleto = nombresIndividuales[i].trim().split(" ");
+      var nombrePila = nombreCompleto[0];
+      var apellido = nombreCompleto[1];
+  
+      // Obtener la inicial del nombre de pila y del apellido
+      var inicialNombrePila = nombrePila.charAt(0);
+      var inicialApellido = apellido.charAt(0);
+  
+      // Agregar las iniciales al array
+      iniciales.push(inicialNombrePila + inicialApellido);
+    }
+  
+    // Devolver las iniciales como un string separado por espacios
+    return iniciales.join(" ");
+      
+}
+//asi es que se prueba para  imprimir y probar el test//
+/*var nombres = "Juan Perez,Ana Garcia,Pedro Sanchez";
+console.log(obtenerIniciales(nombres)); // Salida: "JP AG PS"
+*/
 
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
