@@ -1,5 +1,5 @@
-var resultado = obtenerIniciales("John,Doe,Anna,Smith");
-console.log(resultado); // Output: "JDAS"
+//var resultado = obtenerIniciales("John,Doe,Anna,Smith");
+//console.log(resultado); // Output: "JDAS"
 function obtenerIniciales(nombres) {
   // Dividir el string en nombres individuales
   var nombresIndividuales = nombres.split(",");

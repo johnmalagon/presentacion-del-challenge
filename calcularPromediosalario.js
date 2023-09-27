@@ -242,11 +242,18 @@ function bienvenidoSr(persona) {
 
 function obtenerLibrosPorAutor(libros, autor) {
     // Tu código aquí
-    var libros = libros;
-    var autor = autor;
-    var librosPorAutor = [];
+
+   let librosPorAutor = [];
+   for (var i = 0; i < libros.length; i++) {
+       if (libros[i].autor === autor) {
+           librosPorAutor.push(libros[i]);
+       }
+   }
+   return librosPorAutor;
 
 }
+const autor = "Gabriel García Márquez";
+console.log(obtenerLibrosPorAutor(libros, autor));
 
 
 
